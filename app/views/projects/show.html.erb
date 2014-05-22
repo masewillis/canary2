@@ -1,0 +1,63 @@
+<h2 class="project_name"><%= @project.name %></h2>
+<p>
+  <%= link_to "edit", "/companies/#{current_company.id}/myprojects/#{@project.id}/edit" %> |
+  <%= link_to("Destroy", "/companies/#{current_company.id}/projects/#{params[:id]}", method: :delete) %>
+
+</p>
+
+<p class="project_company">
+  Company: <%= @cname %>
+</p>
+<p class="project_country">
+  Country: <%= @project.country_id %>
+</p>
+<p class="project_minefield">
+  Oilfield/Mine: <%= @project.minefield_id %>
+</p>
+
+<p class="project_description">
+  Description: <%= @project.description %>
+</p>
+
+
+
+
+
+
+<h2>Responses</h2>
+
+
+<%= form_for @response, url: "/companies/#{@project.company_id}/projects/#{@project.id}", method: "POST" do |f| %>
+   <%= f.text_field :title, {placeholder: "project name"} %>
+   <%= f.text_field :description, {placeholder: "response"} %>
+
+
+   <%= f.hidden_field :project_id, value: @project.id %>
+   <%= f.hidden_field :company_id, value: current_company.id %>
+   <%= f.submit %>
+ <% end %>
+
+
+
+
+   <p>
+        <ul class="responses">
+        <% @project.responses.each do |response| %>
+          <li class="project_name">
+             <p>
+              <%= response.title %>
+            </p>
+             <p>
+              By: <% response.company_id %>
+            </p>
+             <p>
+              Message: <%= response.description %>
+
+            </p>
+             <%= link_to "edit", "/companies/#{current_company.id}/projects/#{@project.id}/edit" %> |
+              <%= link_to("Destroy", "/companies/#{current_company.id}/projects/#{params[:id]}", method: :delete) %>
+          </li>
+        <% end %>
+        </ul>
+
+      </p>

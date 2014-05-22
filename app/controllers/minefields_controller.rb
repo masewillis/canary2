@@ -1,0 +1,15 @@
+class MinefieldsController < ApplicationController
+
+
+
+
+
+
+
+
+
+
+
+
+
+end

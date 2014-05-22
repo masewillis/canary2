@@ -1,0 +1,20 @@
+
+
+
+<h2>Companies</h2>
+<ul class="companies">
+  <% @companies.each do |company| %>
+
+      <h4 class="company_name"><%= company.cname %></h4>
+      <p>
+        <div class="projects">
+        <% company.projects.each do |project| %>
+          <div class="project_title">
+            <%= project.name %>
+
+        <% end %>
+        </ul>
+      </p>
+    </div>
+  <% end %>
+</ul>

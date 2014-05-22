@@ -1,0 +1,14 @@
+
+<h2 class="country_name"><%= @country.name %></h2>
+
+
+
+<h4> Oilfields </h4>
+  <% @country.minefields.each do |minefield| %>
+  <%= minefield.name %>
+    <% end %>
+
+
+
+
+

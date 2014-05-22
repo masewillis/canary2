@@ -1,0 +1,19 @@
+ <h2><%= @company.cname %></h2>
+<ul class="companies">
+      <h4 class="company_name"><%= @company.name %></h4>
+      <h5>Title: <%= @company.title %></h5>
+      <h5>email: <%= @company.email %></h5>
+      <p>
+        <ul class="projects">
+        <% @company.projects.each do |project| %>
+          <li class="project_name">
+            <%= link_to project.name, "/projects/#{project.id}" %>
+            <p>
+
+            </p>
+          </li>
+        <% end %>
+        </ul>
+      </p>
+
+

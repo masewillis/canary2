@@ -1,0 +1,17 @@
+<div class = "myprojects">
+<h3> Projects </h3>
+<%= link_to "Add New Project", "/companies/#{current_company.id}/projects/new" %>
+<p>
+        <ul class="projects">
+        <% current_company.projects.each do |project| %>
+          <li class="project_name">
+            <%= link_to project.name, "/companies/#{current_company.id}/projects/#{project.id}" %>
+            <p>
+
+
+            </p>
+          </li>
+        <% end %>
+        </ul>
+      </p>
+</div>

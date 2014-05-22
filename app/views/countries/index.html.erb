@@ -1,0 +1,28 @@
+
+
+
+
+<h3> <% @country.name %> Countries </h3>
+<p>
+    <div class ="countries">
+        <ul>
+        <% @countries.each do |country| %>
+          <li class="country_name">
+            <%= link_to country.name, "/countries/#{country.id}" %>
+            <p>
+                <ul class="projects">
+                <% country.projects.each do |project| %>
+                <li class="project_title">
+                 <%= project.name %>
+                </li>
+                <% end %>
+                </ul>
+            </p>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+      </p>
+
+
+

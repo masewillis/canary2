@@ -1,0 +1,26 @@
+<h3>New Company</h3>
+<%= form_for company do |f| %>
+  <p>
+    <%= f.text_field :cname, { placeholder: "company name" } %>
+  </p>
+  <p>
+    <%= f.text_field :name, { placeholder: "name" } %>
+  </p>
+   <p>
+    <%= f.text_field :title, { placeholder: "title" } %>
+  </p>
+  <p>
+    <%= f.text_field :email, { placeholder: "email" } %>
+  </p>
+  <p>
+    <%= f.password_field :password, { placeholder: "password" } %>
+  </p>
+    <p>
+      <%= f.password_field :password_confirmation, { placeholder: "password again" } %>
+    </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

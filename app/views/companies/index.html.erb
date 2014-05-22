@@ -1,0 +1,53 @@
+
+
+<div class = "section group">
+
+   <div class = "col span_1_of_2">
+<h3> <%= "World News" %></h3>
+
+  <div class="news">
+  <ul>
+  <% @worldarticles.entries.each do |entry| %>
+  <li>
+  <%= link_to entry.title, "#{entry.url}" %>
+  <% end %>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+  <div class = "col span_1_of_2">
+<h3> <%= "Oil and Gas Industry - Upstream" %></h3>
+
+  <div class="news">
+  <ul>
+  <% @articles.entries.each do |entry| %>
+  <li>
+  <%= link_to entry.title, "#{entry.url}" %>
+  <% end %>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+<div class = "col span_1_of_2">
+<h3> <%= "Mining News" %> </h3>
+
+  <div class="news">
+  <ul>
+  <% @minearticles.entries.each do |entry| %>
+  <li>
+  <%= link_to entry.title, "#{entry.url}" %>
+  <% end %>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+</div>

@@ -1,0 +1,15 @@
+
+
+
+<p>
+        <ul class="projects">
+        <% @current_user.projects.each do |project| %>
+          <li class="project_name">
+            <%= link_to project.name, "/projects/#{project.id}" %>
+            <p>
+
+            </p>
+          </li>
+        <% end %>
+        </ul>
+      </p>

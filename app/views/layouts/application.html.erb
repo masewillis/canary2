@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canary</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+
+
+
+
+
+  <div id="company_nav">
+    <header>
+    <img src="/images/eagleblackbg.png" />
+   </header>
+    <% if current_company %>
+      <%= current_company.email %>.
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or
+      <%= link_to "log in", log_in_path %>
+    <% end %>
+  </div>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+
+
+
+
+
+
+
+
+
+<div id='cssmenu'>
+  <% if current_company %>
+<ul>
+   <li class='active'><%= link_to "Home", "/companies/#{current_company.id}/main" %></li>
+   <li><%= link_to "Companies", "/firms" %></li>
+   <li><%= link_to "My Projects", "/companies/#{current_company.id}/myprojects" %></li>
+    <li><%= link_to "All Projects", "/projects" %></li>
+    <li><%= link_to "Countries", "/countries" %></a></li>
+   <li class='last'><%= link_to "Services", "/services" %></li>
+</ul>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

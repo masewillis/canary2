@@ -1,0 +1,11 @@
+<%= form_for @project, url: "/companies/#{current_company.id}/projects/#{@project.id}", method: "patch" do |f| %>
+  <%= f.text_field :name, {placeholder: "project name"} %>
+   <%= f.text_field :country_id, {placeholder: "country id"} %>
+   <%= f.text_field :minefield_id, {placeholder: "minefield id"} %>
+   <%= f.text_field :description, {placeholder: "description"} %>
+   <%= f.hidden_field :company_id, value: current_company.id %>
+  <%= f.submit "Edit Entry" %>
+<% end %>
+
+
+
