@@ -19,8 +19,6 @@
 #   minefield_id: 1,
 #   description: "infrastructure development"
 #   })
-
-
 countries = Country.create({
   name: "Saudi Arabia",
   total_oil: 11725,
@@ -68,7 +66,7 @@ countries = Country.create({
 minefields = Minefield.create({
   name: "Ghawar Field",
   kind: "oilfield",
-  country_id: 2,
+  country_id: 1,
   output: 5000000,
   oil_reserves: 71000
   })
@@ -77,7 +75,7 @@ minefields = Minefield.create({
 minefields = Minefield.create({
   name: "Samotlor Field",
   kind: "oilfield",
-  country_id: 3,
+  country_id: 2,
   output: 750000,
   oil_reserves: 4
   })
@@ -85,7 +83,7 @@ minefields = Minefield.create({
 minefields = Minefield.create({
   name: "Rumaila Field",
   kind: "oilfield",
-  country_id: 4,
+  country_id: 3,
   output: 960000,
   oil_reserves: 17000
   })
@@ -94,10 +92,12 @@ minefields = Minefield.create({
 minefields = Minefield.create({
   name: "Carajas Mine",
   kind: "mine",
-  country_id: 5,
+  country_id: 4,
   output: 510,
   oil_reserves: 0
   })
+
+
 
 
 
